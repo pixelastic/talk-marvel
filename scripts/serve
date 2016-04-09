@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Listen to any change in ./slides.md to rebuild the html
+# Note: We need to add a * character otherwise onchange works only twice
+# And listen with brunch
+parallelshell \
+  "onchange './slides*.md' -- npm run generate" \
+  "brunch watch"

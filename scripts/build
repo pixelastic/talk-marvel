@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+npm run generate
+brunch build --production

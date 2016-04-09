@@ -1,0 +1,29 @@
+{
+  "name": "talk-marvel",
+  "version": "0.0.1",
+  "description": "How we scraped the data and built the UI to search into it.",
+  "author": "Tim \"pixelastic\" Carry",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:pixelastic/talk-marvel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pixelastic/talk-marvel/issues"
+  },
+  "scripts": {
+    "generate": "./scripts/generate",
+    "build": "./scripts/build",
+    "serve": "./scripts/serve",
+    "build:js": "./scripts/build-js",
+    "deploy": "./scripts/deploy"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "2.0.0",
+    "brunch": "2.4.2",
+    "sass-brunch": "2.0.0",
+    "onchange": "2.0.0",
+    "parallelshell": "2.0.0"
+  },
+  "dependencies": {}
+}

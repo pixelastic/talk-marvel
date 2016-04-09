@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo $RANDOM
+# babel \
+#   ./javascripts/vendors/*.js \
+#   ./javascripts/*.js \
+#   --out-file ./source/all.js
