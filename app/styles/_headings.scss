@@ -30,6 +30,7 @@
     text-shadow: 2px 2px 1px black;
     font-size: 7rem;
     margin-bottom: 2rem;
+    padding-left: 5px; // First letter can otherwise be clipped
   }
 
   // Smaller section title

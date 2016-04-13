@@ -25,11 +25,6 @@
         <h1>Marvel Super-Search!</h1>
       </section>
 
-      <!--DEMO-->
-      <section>
-        <h3>Demo time</h3>
-      </section>
-
       <!--WHO AM I-->
       <section class="whoami">
         <h3>Tim Carry</h3>
@@ -51,17 +46,28 @@
         </div>
       </section>
 
+      <!--DEMO-->
+      <section>
+        <h3>Demo time</h3>
+        Gif animé
+        Expliquer les filtres sur team/creator/powers
+        Images, couleurs
+        Tri par popularité
+      </section>
+
+      <!--TABLE OF CONTENTS-->
+      <section>
+        <h3>Table of contents</h3>
+        <ol>
+          <li>Getting the data</li>
+          <li>Tips and tricks</li>
+          <li>Building the UI</li>
+        </ol>
+      </section>
+
       <!--DATA-->
       <section>
-        <h4>Getting the data</h4>
-        <div class="row two-columns">
-          <div class="column u-align-middle u-align-left">
-            <img src="./img/wikipedia-logo.png" alt="Wikipedia logo"/>
-          </div>
-          <div class="column u-align-middle u-align-right">
-            <img src="img/marvel-logo.png" alt="Marvel logo"/>
-          </div>
-        </div>
+        <h1>Getting the data</h1>
       </section>
 
       <!--WIKIPEDIA-->
@@ -69,6 +75,7 @@
         <h3>Wikipedia</h3>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
+            <p><img src="./img/wikipedia-logo.png" alt="Wikipedia logo"/></p>
             <p>List of all characters</p>
             <p>933 <strong>heroes</strong>, 1287 <strong>villains</strong></p> 
             <p>Scrapping with <code>x-ray</code></p>
@@ -122,6 +129,7 @@ x(targetUrl, context, selectors)((urlList) => {
 
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
+            <p><img src="img/dbpedia.png" /></p>
             <p><strong>Unofficial</strong> project</p>
             <p>Community <strong>effort</strong></p>
             <p><strong>structured</strong> data</p>
@@ -195,8 +203,9 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
 &<span class="code-url--key">action</span>=<span class="code-url--value">wbgetentities</span>&<span class="code-url--key">sites</span>=<span class="code-url--value">enwiki</span>&<span class="code-url--key">format</span>=<span class="code-url--value">json</a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
+            <p><img src="./img/wikidata.png" alt="Wikidata logo"/></p>
             <p>Only <strong>metadata</strong></p>
-            <p>Just fo <strong>aliases</strong></p>
+            <p>Just for <strong>aliases</strong></p>
             <p>npm module <code>wikidata-sdk</code></p>
           </div>
           <div class="column u-align-right">
@@ -248,39 +257,120 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
         </div>
       </section>
 
-
-      <!--Manual scraping pour les images-->
-
-
+      <!--IMAGES-->
       <section>
-        None returns the url of the image. Need to manually scrap
-        Marvel has an API! 2 years old. Broken, down, infinite loop, slow, timeout, quota, empty responses
-        Not much info, but valuable.
-        Marvel website has much more info! So manual scrapping
-
-        2. Consolidating
-        Promises, callback, méthodes qui acceptent juste un callback. Tout repassé en promises.
-        TDD saved my life. Plein de tests, plein de edge cases
-        Putting data from all sources together
-        Save JSON on disk. npm run script to download from one source
-        consolidate task to generate the final JSON, with fallbacks
-
-        3. Building the website
-        Brunch
-        Hosted on GitHub Pages
-        Search with instantsearch.js
-        Cloudinary pour les images
-
-        4. Conclusion
-        Accès à plein de data sur le net
-        Plein de services pour construire des choses
-        Go
+        <h3>Old school scrapping</h3>
+        <div class="row two-columns">
+          <div class="column u-align-center">
+            <img src="./img/image-wolverine.png"/>
+          </div>
+          <div class="column u-align-middle u-align-left">
+            <p><strong>No</strong> image in <strong>any</strong> API</p>
+            <p>Manual <strong>scrapping</strong></p>
+            <p><code>x-ray</code> again</p>
+            <pre><code class="language-js">const context = '.infobox a.image';
+const selectors = ['img@src'];</code></pre>
+          </div>
+        </div>
       </section>
 
-      <!--COMPAGNONNAGE-->
-      <section data-background="./img/compagnonnage.jpg">
-        <h2>Compagnonnage</h2>
+      <!--MARVEL API-->
+      <section>
+        <h3>Marvel API</h3>
+        <a href="http://gateway.marvel.com/v1/public/characters/1009262" class="code-url">http://gateway.marvel.com/v1/public/characters/<span class="code-url--value">1009262</span></a>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p><strong>2 years</strong> old</p>
+            <p>Unreliable:</p>
+            <ul>
+              <li>Timeouts</li>
+              <li>Infinite <strong>loops</strong></li>
+              <li><strong>Empty</strong> results</li>
+              <li>Slow</li>
+              <li>Rate limit</li>
+            </ul>
+            <p><code>retryUntilItWorks()</code></p>
+          </div>
+          <div class="column u-align-center">
+            <p><img src="./img/marvel-logo.png" height="60"/></p>
+            <p><img src="img/daredevil.jpg" /></p>
+            <blockquote>Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock […]</blockquote>
+            <p><strong>827</strong> comics, <strong>1326</strong> stories</p>
+          </div>
+        </div>
       </section>
+
+      <!--MARVEL WEBSITE-->
+      <section>
+        <h3>Marvel Website</h3>
+        <a href="http://marvel.com/characters/11/daredevil" class="code-url">http://marvel.com/characters/<span class="code-url--value">11</span>/<span class="code-url--value">daredevil</span></a>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p><strong>Different</strong> than <strong>API</strong></p>
+            <p><strong>Awesome</strong> for design</p>
+            <p>Manual <strong>scrapping</strong></p>
+          </div>
+          <div class="column u-align-center">
+            <p><img src="img/daredevil-bg.gif" /></p>
+            <p><span class="marvel-color" style="background:rgb(63, 6, 6)"></span></p>
+          </div>
+        </div>
+      </section>
+
+      <!--Tips and Tricks-->
+      <section>
+        <h1>Tips & tricks</h1>
+      </section>
+
+      <!--Consolidating-->
+      <!--Persos sur la Wikipedia pas forcément sur Marvel et vice-versa. Consolidation/merge-->
+
+      <!--Save chaque résultat sur disque individuellement-->
+      <!--Permet de relancer une step en isolation-->
+      <!--Npm run scripts-->
+      <!--Résultats pas commités-->
+
+      <!--Étape de consolidation et écriture d'un fichier json final sur disque-->
+      <!--fallbacks si trouve pas sur une source (image marvel, sinon wikipedia)-->
+      <!--fichiers commités sur disque-->
+      <!--clés du JSON ordonnées, facilite le diff-->
+
+      <!--Promisify all the things-->
+      <!--Différentes libraires, plusieurs patterns-->
+      <!--tout passer en promise, chainage plus simple-->
+      <!--citer les librairies utilisées-->
+
+      <!--TDD Saved my life-->
+      <!--données pas propres des sources-->
+      <!--markup wiki, donnée absente, -->
+      <!--globalement input utilisateur, pas trustable-->
+      <!--test unitaires (300+)-->
+
+      <!--=====-->
+
+      <!--Building the website-->
+      <!--Classique: Brunch, babel, sass-->
+      <!--search Algolia (instantsearch.js)-->
+      <!--hosting github pages-->
+      <!--images cloudinary (grosses images lentes de wikipedia)-->
+
+      <!--=====-->
+
+      <!--Conclusion-->
+      <!--Plein de données à portée de main-->
+      <!--Facile de la rendre exploitable, simplifiable-->
+      <!--Outils open-source, création, hébergement-->
+
+      <!--====-->
+
+      <!--Questions-->
+
+      <!--Si vous avez des idées pour plus de dataset, voucher Algolia 3 mois-->
+
+
+
+
+
     </div>
 
   </div>
