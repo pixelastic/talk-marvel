@@ -7,6 +7,10 @@ module.exports = config:
   plugins:
     sass:
       mode: 'native'
+    babel:
+      presets: ['es2015']
+      ignore: []
+      pattern: /\.js$/
   server:
       run: yes
       port: 5010

@@ -1,0 +1,22 @@
+.reveal {
+  // Align text content right, left or center
+  .u-align-right {
+    text-align: right;
+  }
+  .u-align-left {
+    text-align: left;
+  }
+  .u-align-center {
+    text-align: center;
+  }
+  // Also align vertically. Only works in tables (for example .column elements)
+  .u-align-middle {
+    vertical-align: middle;
+  }
+
+  // Remove bullets from list
+  .u-list-no-bullets {
+    list-style: none;
+    margin-left: 0;
+  }
+}

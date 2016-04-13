@@ -21,23 +21,260 @@
     <div class="slides">
 
       <!--HOME-->
-      <section data-background="./img/intro.jpg">
-        <h2>Marvel Super-Search</h2>
+      <section data-background="./img/intro.png">
+        <h1>Marvel Super-Search!</h1>
+      </section>
+
+      <!--DEMO-->
+      <section>
+        <h3>Demo time</h3>
       </section>
 
       <!--WHO AM I-->
       <section class="whoami">
-        <h2>Timothée Carry</h2>
-        <ul class="list-no-bullet">
-          <li class="whoami--algolia">
-            <p>Développeur</p>
+        <h3>Tim Carry</h3>
+        <div class="row two-columns">
+          <div class="column u-align-left u-align-middle">
+            <ul class="u-list-no-bullets">
+              <li><a href="https://twitter.com/pixelastic/">@pixelastic</a></li>
+              <li><a href="http://www.pixelastic.com/">www.pixelastic.com</a></li>
+            </ul>
+          </div>
+          <div class="column u-align-center">
             <a href="https://www.algolia.com/">
-              <img src="./img/algolia.png">
+              <img src="./img/algolia.png" alt="Algolia logo"/>
             </a>
-          </li>
-          <li><a href="https://twitter.com/pixelastic/">@pixelastic</a></li>
-          <li><a href="http://www.pixelastic.com/">www.pixelastic.com</a></li>
-        </ul>
+            <a href="http://www.meetup.com/fr-FR/HumanTalks-Paris/">
+              <img src="./img/humantalks.png" alt="HumanTalks logo">
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!--DATA-->
+      <section>
+        <h4>Getting the data</h4>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <img src="./img/wikipedia-logo.png" alt="Wikipedia logo"/>
+          </div>
+          <div class="column u-align-middle u-align-right">
+            <img src="img/marvel-logo.png" alt="Marvel logo"/>
+          </div>
+        </div>
+      </section>
+
+      <!--WIKIPEDIA-->
+      <section>
+        <h3>Wikipedia</h3>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p>List of all characters</p>
+            <p>933 <strong>heroes</strong>, 1287 <strong>villains</strong></p> 
+            <p>Scrapping with <code>x-ray</code></p>
+          </div>
+          <div class="column">
+            <a href="https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes">
+              <img src="img/wikipedia-list.png" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!--X-RAY-->
+      <section>
+        <h3>X-Ray</h3>
+
+        <pre><code class="language-js">import xray from 'x-ray';
+let x = xray();
+
+const targetUrl = 'https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes';
+const context = '#mw-pages .mw-category-group li';
+const selectors = ['a@href'];
+
+x(targetUrl, context, selectors)((urlList) => {
+  // urlList is an array of all `href` values
+});</code></pre>
+      </section>
+
+      <!--WIKIPEDIA API-->
+      <section>
+        <h3>Wikipedia API</h3>
+        <a href="https://en.wikipedia.org/w/api.php?format=json&action=query&titles=Captain_America&prop=revisions&rvprop=content"class="code-url">https://en.wikipedia.org/w/api.php
+?<span class="code-url--key">titles</span>=<span class="code-url--value">Captain_America</span>
+&<span class="code-url--key">format</span>=<span class="code-url--value">json</span>&<span class="code-url--key">action</span>=<span class="code-url--value">query</span>&<span class="code-url--key">prop</span>=<span class="code-url--value">revisions</span>&<span class="code-url--key">rvprop</span>=<span class="code-url--value">content</span></a>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p><strong>Raw</strong> dump</p>
+            <p>Custom <strong>markup</strong></p>
+            <p><strong>No way!</strong></p>
+          </div>
+          <div class="column">
+            <pre><code class="language-raw">{{Other uses}} {{About|Steve Rogers|the subsequent versions of the character|List of incarnations of Captain America}} {{pp-vandalism|expiry=03:36, 23 May 2016|small=yes}} {{Infobox comics character  | image = CaptainAmerica109.jpg | converted = y | caption = ''Captain America'' #109 (Jan. 1969).Cover art by [[Jack Kirby]] and [[Syd Shores]]. | alt = Captain America bursting […]</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!--DBPEDIA-->
+      <section>
+        <h3>DBPedia</h3>
+        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">http://dbpedia.org/data/<span class="code-url--value">Thor_(Marvel_Comics)</span>.json</a>
+
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p><strong>Unofficial</strong> project</p>
+            <p>Community <strong>effort</strong></p>
+            <p><strong>structured</strong> data</p>
+            <p><strong>Frozen</strong> in time (2015/08)</p>
+          </div>
+          <div class="column u-align-right">
+            <pre><code class="language-js">{
+"abstract": [
+ {
+   "lang": "en",
+   "value": "Thor is a fictional character, a superhero […]"
+ }
+],
+"aliases": [
+ {
+   "lang": "en",
+   "value": "Dr. Donald Blake, Jake Olson, Sigurd Jarlson, Eric Masterson"
+ }
+]
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!--INFOBOX-->
+      <section>
+        <h3>Infobox</h3>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p>Contains <strong>all the info</strong></p>
+            <p>Mostly <strong>structured</strong></p>
+            <p>npm module <code>wiki-infobox</code></p>
+          </div>
+          <div class="column u-align-right">
+            <a href="https://en.wikipedia.org/wiki/Hulk_(comics)">
+              <img src="img/infobox.png" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!--WIKI-INFOBOX-->
+      <section>
+        <h3>wiki-infobox</h3>
+
+        <pre><code class="language-js">import infobox from 'wiki-infobox';
+
+infobox('Hulk_(comics)', 'en', (err, data) => {
+ // {
+ //   "character_name": {
+ //     "type": "text",
+ //     "value": "The Incredible Hulk"
+ //   },
+ //   "aliases": [
+ //     {
+ //       "type": "text",
+ //         "value": "&lt;br&gt;Green Scar&lt;br&gt;World-Breaker&lt;br&gt;Jade Giant"
+ //     },
+ //     […]
+ //   ],
+ //   […]
+ // }
+});</code></pre>
+      </section>
+
+      <!--WIKIDATA-->
+      <section>
+        <h3>Wikidata</h3>
+        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">https://www.wikidata.org/w/api.php
+?<span class="code-url--key">titles</span>=<span class="code-url--value">Spider-Man</span>
+&<span class="code-url--key">action</span>=<span class="code-url--value">wbgetentities</span>&<span class="code-url--key">sites</span>=<span class="code-url--value">enwiki</span>&<span class="code-url--key">format</span>=<span class="code-url--value">json</a>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p>Only <strong>metadata</strong></p>
+            <p>Just fo <strong>aliases</strong></p>
+            <p>npm module <code>wikidata-sdk</code></p>
+          </div>
+          <div class="column u-align-right">
+            <pre><code class="language-js">{
+  "pageid": 81585,
+  "aliases": [
+    {
+      "value": "Peter Parker"
+    },
+    {
+      "value": "Webhead"
+    },
+    {
+      "value": "Spidey"
+    }
+  ],
+  […]
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!--PAGEVIEWS-->
+      <section>
+        <h3>stats.grok.se</h3>
+        <a href="http://stats.grok.se/json/en/latest90/Iron_Man" class="code-url">http://stats.grok.se/json/en/latest90/<span class="code-url--value">Iron_Man</span></a>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p>Pageviews count</p>
+            <p>Personal <strong>project</strong></p>
+            <p>Biased by <strong>Netflix</strong></p>
+          </div>
+          <div class="column u-align-right">
+            <pre><code class="language-js">{
+  "title": "Iron_Man",
+  "rank": 2111,
+  "daily_views": {
+    "2016-01-20": 2476,
+    "2016-01-19": 2394,
+    "2016-01-18": 2359,
+    "2016-01-17": 2196,
+    "2016-01-16": 2563,
+    "2016-01-15": 2661,
+    "2016-01-14": 2393,
+    […]
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+
+      <!--Manual scraping pour les images-->
+
+
+      <section>
+        None returns the url of the image. Need to manually scrap
+        Marvel has an API! 2 years old. Broken, down, infinite loop, slow, timeout, quota, empty responses
+        Not much info, but valuable.
+        Marvel website has much more info! So manual scrapping
+
+        2. Consolidating
+        Promises, callback, méthodes qui acceptent juste un callback. Tout repassé en promises.
+        TDD saved my life. Plein de tests, plein de edge cases
+        Putting data from all sources together
+        Save JSON on disk. npm run script to download from one source
+        consolidate task to generate the final JSON, with fallbacks
+
+        3. Building the website
+        Brunch
+        Hosted on GitHub Pages
+        Search with instantsearch.js
+        Cloudinary pour les images
+
+        4. Conclusion
+        Accès à plein de data sur le net
+        Plein de services pour construire des choses
+        Go
       </section>
 
       <!--COMPAGNONNAGE-->
@@ -48,37 +285,11 @@
 
   </div>
 
+
   <script src="js/head.min.js"></script>
   <script src="js/reveal.js"></script>
-
-  <script>
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-
-      // dependencies: [{
-      //   src: 'js/classList.js',
-      //   condition: function() {
-      //     return !document.body.classList;
-      //   }
-      // },
-      // { 
-      //   src: 'js/prism.js', 
-      //   async: true, 
-      //   callback: function () {
-      //     Prism.highlightAll();
-      //   }
-      // }]
-    Reveal.initialize({
-      controls: false,
-      progress: true,
-      history: true,
-      center: true,
-
-      transition: 'linear'
-
-      // Optional libraries used to extend on reveal.js
-    });
-  </script>
+  <script src="app.js"></script>
+  <script>require('app').default.init()</script>
 </body>
 
 </html>
