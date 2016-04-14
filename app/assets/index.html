@@ -82,7 +82,7 @@
           </div>
           <div class="column">
             <a href="https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes">
-              <img src="img/wikipedia-list.png" />
+              <img src="img/wikipedia-list.png" alt="List of heroes from the Wikipedia" />
             </a>
           </div>
         </div>
@@ -107,9 +107,9 @@ x(targetUrl, context, selectors)((urlList) => {
       <!--WIKIPEDIA API-->
       <section>
         <h3>Wikipedia API</h3>
-        <a href="https://en.wikipedia.org/w/api.php?format=json&action=query&titles=Captain_America&prop=revisions&rvprop=content"class="code-url">https://en.wikipedia.org/w/api.php
-?<span class="code-url--key">titles</span>=<span class="code-url--value">Captain_America</span>
-&<span class="code-url--key">format</span>=<span class="code-url--value">json</span>&<span class="code-url--key">action</span>=<span class="code-url--value">query</span>&<span class="code-url--key">prop</span>=<span class="code-url--value">revisions</span>&<span class="code-url--key">rvprop</span>=<span class="code-url--value">content</span></a>
+        <a href="https://en.wikipedia.org/w/api.php?format=json&action=query&titles=Captain_America&prop=revisions&rvprop=content"class="code-url">https://en.wikipedia.org/w/api.php;
+?<span class="code--key">titles</span>=<span class="code--value">Captain_America</span>
+&<span class="code--key">format</span>=<span class="code--value">json</span>&<span class="code--key">action</span>=<span class="code--value">query</span>&<span class="code--key">prop</span>=<span class="code--value">revisions</span>&<span class="code--key">rvprop</span>=<span class="code--value">content</span></a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
             <p><strong>Raw</strong> dump</p>
@@ -125,11 +125,11 @@ x(targetUrl, context, selectors)((urlList) => {
       <!--DBPEDIA-->
       <section>
         <h3>DBPedia</h3>
-        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">http://dbpedia.org/data/<span class="code-url--value">Thor_(Marvel_Comics)</span>.json</a>
+        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">http://dbpedia.org/data/<span class="code--value">Thor_(Marvel_Comics)</span>.json</a>
 
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
-            <p><img src="img/dbpedia.png" /></p>
+            <p><img src="img/dbpedia.png" alt="DBPedia logo" /></p>
             <p><strong>Unofficial</strong> project</p>
             <p>Community <strong>effort</strong></p>
             <p><strong>structured</strong> data</p>
@@ -165,7 +165,7 @@ x(targetUrl, context, selectors)((urlList) => {
           </div>
           <div class="column u-align-right">
             <a href="https://en.wikipedia.org/wiki/Hulk_(comics)">
-              <img src="img/infobox.png" />
+              <img src="img/infobox.png" alt="Screenshot of an infobox" />
             </a>
           </div>
         </div>
@@ -199,8 +199,8 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
       <section>
         <h3>Wikidata</h3>
         <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">https://www.wikidata.org/w/api.php
-?<span class="code-url--key">titles</span>=<span class="code-url--value">Spider-Man</span>
-&<span class="code-url--key">action</span>=<span class="code-url--value">wbgetentities</span>&<span class="code-url--key">sites</span>=<span class="code-url--value">enwiki</span>&<span class="code-url--key">format</span>=<span class="code-url--value">json</a>
+?<span class="code--key">titles</span>=<span class="code--value">Spider-Man</span>
+&<span class="code--key">action</span>=<span class="code--value">wbgetentities</span>&<span class="code--key">sites</span>=<span class="code--value">enwiki</span>&<span class="code--key">format</span>=<span class="code--value">json</span></a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
             <p><img src="./img/wikidata.png" alt="Wikidata logo"/></p>
@@ -231,7 +231,7 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
       <!--PAGEVIEWS-->
       <section>
         <h3>stats.grok.se</h3>
-        <a href="http://stats.grok.se/json/en/latest90/Iron_Man" class="code-url">http://stats.grok.se/json/en/latest90/<span class="code-url--value">Iron_Man</span></a>
+        <a href="http://stats.grok.se/json/en/latest90/Iron_Man" class="code-url">http://stats.grok.se/json/en/latest90/<span class="code--value">Iron_Man</span></a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
             <p>Pageviews count</p>
@@ -262,7 +262,7 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
         <h3>Old school scrapping</h3>
         <div class="row two-columns">
           <div class="column u-align-center">
-            <img src="./img/image-wolverine.png"/>
+            <img src="./img/image-wolverine.png" alt="Wolverine illustration" />
           </div>
           <div class="column u-align-middle u-align-left">
             <p><strong>No</strong> image in <strong>any</strong> API</p>
@@ -277,7 +277,7 @@ const selectors = ['img@src'];</code></pre>
       <!--MARVEL API-->
       <section>
         <h3>Marvel API</h3>
-        <a href="http://gateway.marvel.com/v1/public/characters/1009262" class="code-url">http://gateway.marvel.com/v1/public/characters/<span class="code-url--value">1009262</span></a>
+        <a href="http://gateway.marvel.com/v1/public/characters/1009262" class="code-url">http://gateway.marvel.com/v1/public/characters/<span class="code--value">1009262</span></a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
             <p><strong>2 years</strong> old</p>
@@ -292,8 +292,8 @@ const selectors = ['img@src'];</code></pre>
             <p><code>retryUntilItWorks()</code></p>
           </div>
           <div class="column u-align-center">
-            <p><img src="./img/marvel-logo.png" height="60"/></p>
-            <p><img src="img/daredevil.jpg" /></p>
+            <p><img src="./img/marvel-logo.png" height="60" alt="Marvel logo" /></p>
+            <p><img src="img/daredevil.jpg" alt="Daredevil thumbnail" /></p>
             <blockquote>Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock […]</blockquote>
             <p><strong>827</strong> comics, <strong>1326</strong> stories</p>
           </div>
@@ -303,7 +303,7 @@ const selectors = ['img@src'];</code></pre>
       <!--MARVEL WEBSITE-->
       <section>
         <h3>Marvel Website</h3>
-        <a href="http://marvel.com/characters/11/daredevil" class="code-url">http://marvel.com/characters/<span class="code-url--value">11</span>/<span class="code-url--value">daredevil</span></a>
+        <a href="http://marvel.com/characters/11/daredevil" class="code-url">http://marvel.com/characters/<span class="code--value">11</span>/<span class="code--value">daredevil</span></a>
         <div class="row two-columns">
           <div class="column u-align-middle u-align-left">
             <p><strong>Different</strong> than <strong>API</strong></p>
@@ -311,7 +311,7 @@ const selectors = ['img@src'];</code></pre>
             <p>Manual <strong>scrapping</strong></p>
           </div>
           <div class="column u-align-center">
-            <p><img src="img/daredevil-bg.gif" /></p>
+            <p><img src="img/daredevil-bg.gif" alt="Daredevil comic panels" /></p>
             <p><span class="marvel-color" style="background:rgb(63, 6, 6)"></span></p>
           </div>
         </div>
@@ -322,23 +322,112 @@ const selectors = ['img@src'];</code></pre>
         <h1>Tips & tricks</h1>
       </section>
 
-      <!--Consolidating-->
-      <!--Persos sur la Wikipedia pas forcément sur Marvel et vice-versa. Consolidation/merge-->
+      <!--ISOLATED SCRIPTS-->
+      <section>
+        <h3>Isolated scripts</h3>
+        <div class="row two-columns">
+          <div class="column u-align-middle u-align-left">
+            <p>Various <code>npm run</code> <strong>scripts</strong></p>
+            <p>One <strong>per source</strong></p>
+            <p>Run in <strong>isolation</strong></p>
+            <p><strong>Temporary</strong> save on disk</p>
+          </div>
+          <div class="column u-align-center">
+            <pre><code class="language-sh">$ npm run <span class="code--value">dbpedia</span></code></pre>
 
-      <!--Save chaque résultat sur disque individuellement-->
-      <!--Permet de relancer une step en isolation-->
-      <!--Npm run scripts-->
-      <!--Résultats pas commités-->
+          <pre><code class="language-shell"><span class="code--directory">./download/dbpedia</span>
+  ├── <span class="code--file">8-Ball_(comics).json</span>
+  ├── <span class="code--file">Abdul_Alhazred_(comics).json</span>
+  ├── <span class="code--file">Abigail_Brand.json</span>
+  […]
+  ├── <span class="code--file">Zombie_(comics).json</span>
+  ├── <span class="code--file">Zom.json</span>
+  └── <span class="code--file">Zzzax.json</span>
+</code></pre>
+        </div>
+      </div>
+    </section>
 
-      <!--Étape de consolidation et écriture d'un fichier json final sur disque-->
-      <!--fallbacks si trouve pas sur une source (image marvel, sinon wikipedia)-->
-      <!--fichiers commités sur disque-->
-      <!--clés du JSON ordonnées, facilite le diff-->
+    <!--CONSOLIDATE-->
+    <section>
+      <h3>Consolidate</h3>
+      <div class="row two-columns">
+        <div class="column u-align-middle u-align-left">
+          <p>Merge <strong>all sources</strong></p>
+          <p>Define <strong>fallbacks</strong></p>
+          <p>Committed in <code>git</code></p>
+          <p><strong>Ordered</strong> keys</p>
+        </div>
+        <div class="column u-align-center">
+          <pre><code class="language-sh">$ npm run <span class="code--value">consolidate</span></code></pre>
 
-      <!--Promisify all the things-->
-      <!--Différentes libraires, plusieurs patterns-->
-      <!--tout passer en promise, chainage plus simple-->
-      <!--citer les librairies utilisées-->
+          <pre><code class="language-sh">./<span class="code--directory">download</span>
+├── <span class="code--directory">dbpedia</span>
+├── <span class="code--directory">images</span>
+├── <span class="code--directory">infobox</span>
+├── <span class="code--directory">marvel</span>
+│   ├── <span class="code--directory">api</span>
+│   └── <span class="code--directory">website</span>
+├── <span class="code--directory">pageviews</span>
+├── <span class="code--directory">urls</span>
+└── <span class="code--directory">wikidata</span>
+</code></pre>
+
+        <pre><code class="language-shell"><span class="code--directory">./records</span>
+├── <span class="code--file">8-Ball_(comics).json</span>
+[…]
+└── <span class="code--file">Zzzax.json</span>
+</code></pre>
+
+        </div>
+      </div>
+    </section>
+
+    <!--ASYNCHRONOUS-->
+    <section>
+      <h3>Asynchronous code</h3>
+      <div class="row two-columns">
+        <div class="column u-align-middle u-align-left">
+          <p><strong>Various</strong> patterns</p>
+          <p><strong>Callbacks</strong> and <strong>promises</strong></p>
+          <p>Make it <strong>chainable</strong></p>
+        </div>
+        <div class="column u-align-center">
+          <pre><code class="language-js">f(input, (err, data) => {});</code></pre>
+          <pre><code class="language-js">f(input)((err, data) => {});</code></pre>
+          <pre><code class="language-js">HelperPath.createDir(infoboxDir)
+  .then(getUrls)
+  .then(getInfoboxes)
+  .then(saveToDisk)
+  .then(teardown);</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!--BLUEBIRD-->
+    <section>
+      <h3>Bluebird</h3>
+        <pre><code class="language-js">import Promise from 'bluebird';
+
+// infobox(url, (err, data) => {});
+function infoboxAsPromise(url) {
+return Promise.promisify(infobox)(url)
+}
+
+// x(url, context, selectors)((err, data) => { });
+function xrayAsPromise(url, context, selector) {
+let deferred = Promise.pending();
+x(url, context, selectors)(err, data) => {
+  if (err) {
+    return deferred.reject(err);
+  }
+  deferred.resolve(data);
+});
+return deferred.promise;
+}
+</code></pre>
+    </section>
+
 
       <!--TDD Saved my life-->
       <!--données pas propres des sources-->
