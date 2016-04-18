@@ -8,8 +8,8 @@ rsync \
   --delete \
   --prune-empty-dirs \
   --compress \
-  ./public \
-  pixelastic:/var/www/pixelastic.com/talks.pixelastic.com/dist/cli-fun
+  ./public/* \
+  pixelastic:/var/www/pixelastic.com/talks.pixelastic.com/dist/marvel-parisjs/
 
 
 
