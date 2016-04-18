@@ -2,41 +2,18 @@
 .reveal {
   // If you need columns, wrap them in .row, and define each of them with
   // .column.
-  // Add either .two-columns or .three-columns to the .row to define the number
-  // of columns
-  // <div class="row two-columns">
-  //   <div class="column"></div>
-  //   <div class="column"></div>
-  // </div>
-  //
-  // OR
-  //
-  // <div class="row three-columns">
-  //   <div class="column"></div>
+  // <div class="row">
   //   <div class="column"></div>
   //   <div class="column"></div>
   // </div>
   .row {
-    display: table;
-    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
     .column {
-      display: table-cell;
-      overflow: hidden;
-      pre {
-        white-space: pre-wrap;
+      flex: 1;
+      + .column {
+        margin-left: 10px;
       }
-    }
-    &.two-columns .column {
-      width: 50%;
-      &:first-child {
-        padding-right: 5px;
-      }
-      &:last-child {
-        padding-left: 10px;
-      }
-    }
-    &.three-columns .column {
-      width: 33%;
     }
   }
 }

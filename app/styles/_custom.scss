@@ -5,4 +5,37 @@
     height: 80px;
     width: 80px;
   }
+
+  // List of all logos of tools used in the demo
+  .marvel-building-blocks--logos {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .marvel-building-blocks--logo {
+    flex: 1 0 33%;
+    align-self: center;
+    img {
+      max-height: 250px;
+    }
+  }
+
+  // Instantsearch
+  .marvel-instantsearch--title {
+    margin: 0;
+  }
+  .marvel-instantsearch--logo {
+    width: 100%;
+  }
+
+  // Cloudinary
+  .marvel-cloudinary--image {
+    position: relative;
+    &:after {
+      font-family: 'Code';
+      position: absolute;
+      bottom: 15px;
+      right: 25px;
+      content: attr(data-text);
+    }
+  }
 }

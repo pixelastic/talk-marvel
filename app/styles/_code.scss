@@ -5,18 +5,25 @@
     font-size: 1.5rem;
     background: #121212;
     overflow: hidden;
-    line-height: 1.3rem;
+    line-height: 1.1em;
     margin: 0;
     width: 100%;
     margin-bottom: 1rem;
-  }
-  pre code {
-    padding: 0;
-    // Reverting the styles of the default `code`
-    background: transparent;
-    font-weight: normal;
-    font-size: inherit;
-    line-height: inherit;
+    font-family: inherit;
+    box-shadow: none;
+    code {
+      padding: 0;
+      // Reverting the styles of the default `code`
+      background: transparent;
+      font-weight: normal;
+      font-size: inherit;
+      line-height: inherit;
+      // background: blue;
+      span {
+        // background: red;
+        // display: inline-block;
+      }
+    }
   }
 
   // Inline code
@@ -88,6 +95,19 @@
     }
     &.comment {
       color: #626262;
+    }
+  }
+
+  .language-html .token {
+    &.tag,
+    &.punctuation {
+      color: #008700;
+    }
+    &.attr-name {
+       color: #FF5F5F;
+    }
+    &.attr-value {
+      color: #5F87AF;
     }
   }
 }
