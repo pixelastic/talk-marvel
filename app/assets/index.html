@@ -31,10 +31,7 @@
         <h3>Tim Carry</h3>
         <div class="row">
           <div class="column u-align-left u-align-middle">
-            <ul class="u-list-no-bullets">
-              <li><a href="https://twitter.com/pixelastic/">@pixelastic</a></li>
-              <li><a href="http://www.pixelastic.com/">www.pixelastic.com</a></li>
-            </ul>
+            <h4><a href="https://twitter.com/pixelastic/">@pixelastic</a></h4>
           </div>
           <div class="column u-align-center">
             <a href="https://www.algolia.com/">
@@ -49,11 +46,7 @@
 
       <!--DEMO-->
       <section>
-        <h3>Demo time</h3>
-        Gif animé
-        Expliquer les filtres sur team/creator/powers
-        Images, couleurs
-        Tri par popularité
+        <iframe width="1120" height="630" src="https://www.youtube.com/embed/SwnP8U6vuWQ" frameborder="0" allowfullscreen></iframe>
       </section>
 
       <!--TABLE OF CONTENTS-->
@@ -74,8 +67,7 @@
         <div class="row">
           <div class="column u-align-middle u-align-left">
             <p><img src="./img/wikipedia-logo.png" class="u-align-center-box" alt="Wikipedia logo" height="180"/></p>
-            <p>List of all characters</p>
-            <p>933 <strong>heroes</strong>, 1287 <strong>villains</strong></p> 
+            <p>List of all <strong>2056</strong> characters</p>
             <p>Scrapping with <code>x-ray</code></p>
           </div>
           <div class="column u-align-middle">
@@ -94,10 +86,9 @@
 let x = xray();
 
 const targetUrl = 'https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes';
-const context = '#mw-pages .mw-category-group li';
-const selectors = ['a@href'];
+const selector = '#mw-pages .mw-category-group li a@href';
 
-x(targetUrl, context, selectors)((urlList) => {
+x(targetUrl, selector)((urlList) => {
   // urlList is an array of all `href` values
 });</code></pre>
       </section>
@@ -234,6 +225,7 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
           <div class="column u-align-middle u-align-left">
             <p>Pageviews count</p>
             <p>Personal <strong>project</strong></p>
+            <p>Dead after 2016/01</p>
             <p>Biased by <strong>Netflix</strong></p>
           </div>
           <div class="column u-align-right">
@@ -268,8 +260,7 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
             <p><code>x-ray</code> again</p>
             <pre><code class="language-js">x(
   'https://wikipedia.org/Wolverine',
-  '.infobox a.image', 
-  ['img@src']
+  '.infobox a.image img@src'
 )(imageUrl => {
   console.log(imageUrl);
 });</code></pre>
@@ -334,6 +325,8 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
             <p>One <strong>per source</strong></p>
             <p>Run in <strong>isolation</strong></p>
             <p><strong>Temporary</strong> save on disk</p>
+            <p>Scraping is <strong>easy</strong> and <strong>slow</strong></p>
+            <p>Parsing is <strong>hard</strong> and <strong>fast</strong></p>
           </div>
           <div class="column u-align-center">
             <pre><code class="language-sh">$ npm run <span class="code--value">dbpedia</span></code></pre>
@@ -453,7 +446,7 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
       <span class="code--value">✓</span> should remove comments
       […]
 
-    <span class="code--value">260 passing</span> (598ms)</code></pre>
+    <span class="code--value">319 passing</span> (598ms)</code></pre>
           </div>
         </div>
       </section>
@@ -510,19 +503,19 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
           </div>
           <div class="column u-align-center">
             <pre><code class="language-html">&lt;h3>Teams&lt;/h3>
-  &lt;div id="teams">&lt;/div></code></pre>
+&lt;div id="teams">&lt;/div></code></pre>
 
             <pre><code class="language-js">[…].refinementList({
-    container: '#teams',
-    attributeName: 'teams',
-    operator: 'and',
-    limit: 10
-  })</code></pre>
+  container: '#teams',
+  attributeName: 'teams',
+  operator: 'and',
+  limit: 10
+})</code></pre>
 
             <pre><code class="language-css">.ais-refinement-list--label {
-    cursor: pointer;
-    font-weight: normal;
-  }</code></pre>
+  cursor: pointer;
+  font-weight: normal;
+}</code></pre>
           </div>
         </div>
       </section>
