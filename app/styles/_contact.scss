@@ -70,3 +70,22 @@
     }
   }
 }
+
+// Voucher
+.reveal {
+  .voucher {
+    a {
+      font-family: 'Code';
+      font-size: 1.7rem;
+      line-height: 1.5rem;
+      background:#3F3F3F;
+      color:#DCDCDC;
+      padding:0.2em 0.5em;
+      font-weight: bold;
+    }
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    right: 0;
+  }
+}
