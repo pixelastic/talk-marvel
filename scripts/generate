@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-sed -e '/SLIDES/{r slides.md' -e 'd}' \
-  template.html > /tmp/remark-generate.html && \
-  mv /tmp/remark-generate.html ./app/assets/index.html
-
