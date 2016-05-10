@@ -1,7 +1,8 @@
 {
   "globals": {
     "Reveal": true,
-    "Prism": true
+    "Prism": true,
+    "$": true
   },
   "extends": "algolia",
   "rules": {

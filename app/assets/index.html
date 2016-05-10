@@ -18,9 +18,11 @@
 
 <body>
   <a class="demo-link" target="_blank" href="https://pixelastic.github.io/marvel/">https://pixelastic.github.io/marvel/</a>
+  <div class="demo--video js-demo--video">
+    <iframe height="100%" width="100%" frameborder="0" allowfullscreen></iframe>
+  </div>
   <div class="reveal">
     <div class="slides">
-
       <!--HOME-->
       <section data-background="./img/background-intro.png">
         <h1>Marvel Super-Search!</h1>
@@ -34,26 +36,19 @@
             <h4><a href="https://twitter.com/pixelastic/">@pixelastic</a></h4>
           </div>
           <div class="column u-align-center">
-            <a href="https://www.algolia.com/">
-              <img src="./img/algolia.png" alt="Algolia logo"/>
-            </a>
             <a href="http://www.meetup.com/fr-FR/HumanTalks-Paris/">
               <img src="./img/humantalks.png" alt="HumanTalks logo">
+            </a>
+            <p> </p>
+            <a href="https://www.algolia.com/">
+              <img src="./img/algolia.png" alt="Algolia logo"/>
             </a>
           </div>
         </div>
       </section>
 
       <!--DEMO-->
-      <section>
-        <iframe width="1120" height="630" src="https://www.youtube.com/embed/SwnP8U6vuWQ" frameborder="0" allowfullscreen></iframe>
-      </section>
-
-      <!--TABLE OF CONTENTS-->
-      <section>
-        <h4>1. Getting the data</h4>
-        <h4>2. Tips and tricks</h4>
-        <h4>3. Building the UI</h4>
+      <section data-demo="true">
       </section>
 
       <!--DATA-->
@@ -66,204 +61,31 @@
         <h3>Wikipedia</h3>
         <div class="row">
           <div class="column u-align-middle u-align-left">
-            <p><img src="./img/wikipedia-logo.png" class="u-align-center-box" alt="Wikipedia logo" height="180"/></p>
-            <p>List of all <strong>2056</strong> characters</p>
-            <p>Scrapping with <code>x-ray</code></p>
+            <p>Too <strong>many</strong> sources</p>
+            <p>Hard to use:</p>
+            <ul>
+              <li><strong>Raw</strong> results</li>
+              <li>Custom <strong>markup</strong></li>
+              <li>Not <strong>structured</strong></li>
+              <li><strong>Unofficial</strong> projects</li>
+              <li><strong>Frozen</strong> in time</li>
+              <li><strong>Incomplete</strong></li>
+            </ul>
+            <p><code>wiki-infobox</code></p>
+            <p><code>wikidata-sdk</code></p>
+            <p><code>x-ray</code></p>
           </div>
-          <div class="column u-align-middle">
-            <a href="https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes">
-              <img src="img/wikipedia-list.png" alt="List of heroes from the Wikipedia" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!--X-RAY-->
-      <section>
-        <h3>X-Ray</h3>
-
-        <pre><code class="language-js">import xray from 'x-ray';
-let x = xray();
-
-const targetUrl = 'https://en.wikipedia.org/wiki/Category:Marvel_Comics_superheroes';
-const selector = '#mw-pages .mw-category-group li a@href';
-
-x(targetUrl, selector)((urlList) => {
-  // urlList is an array of all `href` values
-});</code></pre>
-      </section>
-
-      <!--WIKIPEDIA API-->
-      <section>
-        <h3>Wikipedia API</h3>
-        <a href="https://en.wikipedia.org/w/api.php?format=json&action=query&titles=Captain_America&prop=revisions&rvprop=content"class="code-url">https://en.wikipedia.org/w/api.php;
-?<span class="code--key">titles</span>=<span class="code--value">Captain_America</span>
-&<span class="code--key">format</span>=<span class="code--value">json</span>&<span class="code--key">action</span>=<span class="code--value">query</span>&<span class="code--key">prop</span>=<span class="code--value">revisions</span>&<span class="code--key">rvprop</span>=<span class="code--value">content</span></a>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p><strong>Raw</strong> dump</p>
-            <p>Custom <strong>markup</strong></p>
-            <p><strong>No way!</strong></p>
-          </div>
-          <div class="column">
-            <pre><code class="language-raw u-text--prewrap">{{Other uses}} {{About|Steve Rogers|the subsequent versions of the character|List of incarnations of Captain America}} {{pp-vandalism|expiry=03:36, 23 May 2016|small=yes}} {{Infobox comics character  | image = CaptainAmerica109.jpg | converted = y | caption = ''Captain America'' #109 (Jan. 1969).Cover art by [[Jack Kirby]] and [[Syd Shores]]. | alt = Captain America bursting […]</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--DBPEDIA-->
-      <section>
-        <h3>DBPedia</h3>
-        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">http://dbpedia.org/data/<span class="code--value">Thor_(Marvel_Comics)</span>.json</a>
-
-        <div class="row">
-          <div class="column u-align-top u-align-left">
-            <p><img src="img/dbpedia.png" class="u-align-center-box" alt="DBPedia logo" /></p>
-            <p><strong>Unofficial</strong> project</p>
-            <p>Community <strong>effort</strong></p>
-            <p><strong>structured</strong> data</p>
-            <p><strong>Frozen</strong> in time (2015/08)</p>
-          </div>
-          <div class="column u-align-right">
-            <pre><code class="language-js u-text--prewrap">{
-  "abstract": [
-   {
-     "lang": "en",
-     "value": "Thor is a fictional character, a superhero […]"
-   }
-  ],
-  "aliases": [
-   {
-     "lang": "en",
-     "value": "Dr. Donald Blake, Jake Olson, Sigurd Jarlson, Eric Masterson"
-   }
-  ]
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--INFOBOX-->
-      <section>
-        <h3>Infobox</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>Contains <strong>all the info</strong></p>
-            <p>Mostly <strong>structured</strong></p>
-            <p>npm module <code>wiki-infobox</code></p>
-          </div>
-          <div class="column u-align-right">
-            <a href="https://en.wikipedia.org/wiki/Hulk_(comics)">
-              <img src="img/infobox.png" alt="Screenshot of an infobox" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!--WIKI-INFOBOX-->
-      <section>
-        <h3>wiki-infobox</h3>
-
-        <pre><code class="language-js">import infobox from 'wiki-infobox';
-
-infobox('Hulk_(comics)', 'en', (err, data) => {
- // {
- //   "character_name": {
- //     "type": "text",
- //     "value": "The Incredible Hulk"
- //   },
- //   "aliases": [
- //     {
- //       "type": "text",
- //         "value": "&lt;br&gt;Green Scar&lt;br&gt;World-Breaker&lt;br&gt;Jade Giant"
- //     },
- //     […]
- //   ],
- //   […]
- // }
-});</code></pre>
-      </section>
-
-      <!--WIKIDATA-->
-      <section>
-        <h3>Wikidata</h3>
-        <a href="http://dbpedia.org/data/Thor_(Marvel_Comics).json" class="code-url">https://www.wikidata.org/w/api.php
-?<span class="code--key">titles</span>=<span class="code--value">Spider-Man</span>
-&<span class="code--key">action</span>=<span class="code--value">wbgetentities</span>&<span class="code--key">sites</span>=<span class="code--value">enwiki</span>&<span class="code--key">format</span>=<span class="code--value">json</span></a>
-        <div class="row">
-          <div class="column u-align-top u-align-left">
-            <p><img src="./img/wikidata.png" class="u-align-center-box" alt="Wikidata logo"/></p>
-            <p>Only <strong>metadata</strong></p>
-            <p>Just for <strong>aliases</strong></p>
-            <p>npm module <code>wikidata-sdk</code></p>
-          </div>
-          <div class="column u-align-right">
-            <pre><code class="language-js">{
-  "pageid": 81585,
-  "aliases": [
-    {
-      "value": "Peter Parker"
-    },
-    {
-      "value": "Webhead"
-    },
-    {
-      "value": "Spidey"
-    }
-  ],
-  […]
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--PAGEVIEWS-->
-      <section>
-        <h3>stats.grok.se</h3>
-        <a href="http://stats.grok.se/json/en/latest90/Iron_Man" class="code-url">http://stats.grok.se/json/en/latest90/<span class="code--value">Iron_Man</span></a>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>Pageviews count</p>
-            <p>Personal <strong>project</strong></p>
-            <p>Dead after 2016/01</p>
-            <p>Biased by <strong>Netflix</strong></p>
-          </div>
-          <div class="column u-align-right">
-            <pre><code class="language-js">{
-  "title": "Iron_Man",
-  "rank": 2111,
-  "daily_views": {
-    "2016-01-20": 2476,
-    "2016-01-19": 2394,
-    "2016-01-18": 2359,
-    "2016-01-17": 2196,
-    "2016-01-16": 2563,
-    "2016-01-15": 2661,
-    "2016-01-14": 2393,
-    […]
-  }
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--IMAGES-->
-      <section>
-        <h3>Old school scrapping</h3>
-        <div class="row">
           <div class="column u-align-center">
-            <img src="./img/image-wolverine.png" alt="Wolverine illustration" />
-          </div>
-          <div class="column u-align-middle u-align-left">
-            <p><strong>No</strong> image in <strong>any</strong> API</p>
-            <p>Manual <strong>scrapping</strong></p>
-            <p><code>x-ray</code> again</p>
-            <pre><code class="language-js">x(
-  'https://wikipedia.org/Wolverine',
-  '.infobox a.image img@src'
-)(imageUrl => {
-  console.log(imageUrl);
-});</code></pre>
+            <a href="https://en.wikipedia.org/" class="marvel-wikipedia-api--logo">
+              <img src="img/wikipedia-logo.png" alt="Wikipedia Logo" />
+            </a>
+            <a href="http://wiki.dbpedia.org/" class="marvel-wikipedia-api--logo">
+              <img src="img/dbpedia.png" alt="DBPedia logo" />
+            </a>
+            <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" class="marvel-wikipedia-api--logo">
+              <img src="img/wikidata.png" alt="Wikidata logo" />
+            </a>
+            <strong>HTML scraping</strong>
           </div>
         </div>
       </section>
@@ -295,25 +117,19 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
       </section>
 
       <!--MARVEL WEBSITE-->
-      <section>
+      <section data-background="img/daredevil-bg.gif">
         <h3>Marvel Website</h3>
         <a href="http://marvel.com/characters/11/daredevil" class="code-url">http://marvel.com/characters/<span class="code--value">11</span>/<span class="code--value">daredevil</span></a>
         <div class="row">
           <div class="column u-align-middle u-align-left">
             <p><strong>Different</strong> than <strong>API</strong></p>
+            <p>Manual <strong>scrapping</strong> again</p>
             <p><strong>Awesome</strong> for design</p>
-            <p>Manual <strong>scrapping</strong></p>
           </div>
           <div class="column u-align-center">
-            <p><img src="img/daredevil-bg.gif" alt="Daredevil comic panels" /></p>
-            <p><span class="marvel-color" style="background:rgb(63, 6, 6)"></span></p>
+            <p><span class="marvel-color" style="background:rgb(63, 6, 6)">#3F0606</span></p>
           </div>
         </div>
-      </section>
-
-      <!--Tips and Tricks-->
-      <section data-background="img/background-tips-tricks.jpg">
-        <h1>Tips & tricks</h1>
       </section>
 
       <!--ISOLATED SCRIPTS-->
@@ -321,14 +137,22 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
         <h3>Isolated scripts</h3>
         <div class="row">
           <div class="column u-align-middle u-align-left">
-            <p>Various <code>npm run</code> <strong>scripts</strong></p>
-            <p>One <strong>per source</strong></p>
-            <p>Run in <strong>isolation</strong></p>
-            <p><strong>Temporary</strong> save on disk</p>
-            <p>Scraping is <strong>easy</strong> and <strong>slow</strong></p>
-            <p>Parsing is <strong>hard</strong> and <strong>fast</strong></p>
+            <p>One script <strong>per source</strong></p>
+            <p> </p>
+            <p><strong>Scraping</strong></p>
+            <ul>
+              <li>Easy</li>
+              <li>Slow</li>
+              <li><strong>Temporary</strong> files</li>
+            </ul>
+            <p><strong>Parsing</strong></p>
+            <ul>
+              <li>Complex</li>
+              <li>Fast</li>
+              <li><strong>Commited</strong> in <code>git</code></li>
+            </ul>
           </div>
-          <div class="column u-align-center">
+          <div class="column u-align-center u-align-middle">
             <pre><code class="language-sh">$ npm run <span class="code--value">dbpedia</span></code></pre>
 
             <pre><code class="language-shell"><span class="code--directory">./download/dbpedia</span>
@@ -343,132 +167,10 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
         </div>
       </section>
 
-      <!--CONSOLIDATE-->
-      <section>
-        <h3>Consolidate</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>Merge <strong>all sources</strong></p>
-            <p>Define <strong>fallbacks</strong></p>
-            <p>Committed in <code>git</code></p>
-            <p><strong>Ordered</strong> keys</p>
-          </div>
-          <div class="column u-align-center">
-            <pre><code class="language-sh">$ npm run <span class="code--value">consolidate</span></code></pre>
-
-            <pre><code class="language-sh">./<span class="code--directory">download</span>
-  ├── <span class="code--directory">dbpedia</span>
-  ├── <span class="code--directory">images</span>
-  ├── <span class="code--directory">infobox</span>
-  ├── <span class="code--directory">marvel</span>
-  │   ├── <span class="code--directory">api</span>
-  │   └── <span class="code--directory">website</span>
-  ├── <span class="code--directory">pageviews</span>
-  ├── <span class="code--directory">urls</span>
-  └── <span class="code--directory">wikidata</span>
-  </code></pre>
-
-          <pre><code class="language-shell"><span class="code--directory">./records</span>
-  ├── <span class="code--file">8-Ball_(comics).json</span>
-  […]
-  └── <span class="code--file">Zzzax.json</span>
-  </code></pre>
-
-          </div>
-        </div>
-      </section>
-
-      <!--ASYNCHRONOUS-->
-      <section>
-        <h3>Asynchronous code</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p><strong>Various</strong> patterns</p>
-            <p><strong>Callbacks</strong> and <strong>promises</strong></p>
-            <p>Make it <strong>chainable</strong></p>
-          </div>
-          <div class="column u-align-center">
-            <pre><code class="language-js">f(input, (err, data) => {});</code></pre>
-            <pre><code class="language-js">f(input)((err, data) => {});</code></pre>
-            <pre><code class="language-js">HelperPath.createDir(infoboxDir)
-    .then(getUrls)
-    .then(getInfoboxes)
-    .then(saveToDisk)
-    .then(teardown);</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--BLUEBIRD-->
-      <section>
-        <h3>Bluebird</h3>
-          <pre><code class="language-js">import Promise from 'bluebird';
-
-  // infobox(url, (err, data) => {});
-  function infoboxAsPromise(url) {
-    return Promise.promisify(infobox)(url)
-  }
-
-  // x(url, context, selectors)((err, data) => { });
-  function xrayAsPromise(url, context, selector) {
-    let deferred = Promise.pending();
-    x(url, context, selectors)(err, data) => {
-      if (err) {
-        return deferred.reject(err);
-      }
-      deferred.resolve(data);
-    });
-    return deferred.promise;
-  }
-  </code></pre>
-      </section>
-
-      <!--TDD-->
-      <section>
-        <h3>TDD saved my life</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>    <strong>malformed</strong> data</p>
-            <p>+ <strong>untrusted</strong> data</p>
-            <p>----------------</p>
-            <p>= <strong>unit testing!</strong></p>
-          </div>
-          <div class="column u-align-center">
-            <pre><code class="language-shell">$ npm run <span class="code--value">test</span>
-
-  HelperDBPedia
-    <span class="code--key">isHero</span>
-      <span class="code--value">✓</span> should be true if hero
-    <span class="code--key">getPowers</span>
-      <span class="code--value">✓</span> should split on new lines
-      <span class="code--value">✓</span> should split on commas
-      <span class="code--value">✓</span> should work on arrays
-      <span class="code--value">✓</span> should remove comments
-      […]
-
-    <span class="code--value">319 passing</span> (598ms)</code></pre>
-          </div>
-        </div>
-      </section>
-
       <!--BUILDING THE UI-->
       <section data-background="img/background-ui.jpg">
         <h1>Building the UI</h1>
-      </section>
-
-      <!--BUILDING BLOCKS-->
-      <section>
-        <h3>Building blocks</h3>
         <div class="marvel-building-blocks--logos">
-          <a href="http://brunch.io/" class="marvel-building-blocks--logo">
-            <img src="img/brunch.png" alt="Brunch logo" />
-          </a>
-          <a href="https://babeljs.io/" class="marvel-building-blocks--logo">
-            <img src="img/babel.png" alt="Babel logo" />
-          </a>
-          <a href="http://sass-lang.com/" class="marvel-building-blocks--logo">
-            <img src="img/sass.png" alt="Sass logo" />
-          </a>
           <a href="https://github.com/" class="marvel-building-blocks--logo">
             <img src="img/github.png" alt="GitHub logo" />
           </a>
@@ -488,10 +190,6 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
             <img src="img/instantsearch.svg" class="marvel-instantsearch--logo" alt="InstantSearch logo" />
           </a>
         </h3>
-
-        <p>
-          <a href="https://community.algolia.com/instantsearch.js/" class="code-url u-align-center">https://community.algolia.com/instantsearch.js/</a>
-        </p>
 
         <div class="row">
           <div class="column u-align-middle u-align-left">
@@ -540,24 +238,6 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
         </div>
       </section>
 
-      <!--CONCLUSION-->
-      <section>
-        <h3>Let's build stuff!</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>    Free <strong>data</strong></p>
-            <p>+ Free <strong>software</strong></p>
-            <p>+ Free <strong>hosting</strong></p>
-            <p>+ Free <strong>search</strong></p>
-            <p>-------------</p>
-            <p>= <strong>Awesome</strong></p>
-          </div>
-          <div class="column u-align-center">
-            <p><img src="img/data-everywhere.jpg" alt="Data everywhere meme" /></p>
-          </div>
-        </div>
-      </section>
-
       <!--QUESTIONS-->
       <section data-background="img/algolia-alien.png">
         <div class="contact">
@@ -571,15 +251,12 @@ infobox('Hulk_(comics)', 'en', (err, data) => {
             </div>
           </div>
         </div>
-        <div class="voucher">
-          <p>2 months free</p>
-          <a href="http://www.algolia.com/redeem/parisjs55">https://www.algolia.com/redeem/PARISJS55</a>
-        </div>
       </section>
 
     </div>
   </div>
 
+  <script src="js/zepto.min.js"></script>
   <script src="js/head.min.js"></script>
   <script src="js/reveal.js"></script>
   <script src="app.js"></script>
