@@ -1,0 +1,35 @@
+section
+  h3.f3.mb3.palooka 
+    |Incomplete 
+    .di.gold API 
+
+  .flex-row-nowrap.h4
+    .flex-auto.w-50
+      .f4.palooka Scraping
+      .f7.lh-copy Extract content from HTML using CSS selectors
+
+      .mt2.f7.no-text-shadow
+        .dib.bg-near-black.hack.ph1.mr1.orange nokogiri
+        .dib.bg-near-black.hack.ph1.mr1.blue scrapy
+        .dib.bg-near-black.hack.ph1.mr1.green x-ray
+
+    .flex-auto.w-50.ml2
+      pre.bg-near-black.pa1.f8.no-text-shadow
+        code.language-html.prewrap
+         |&lt;div class="description"&gt;
+         |  &lt;h4&gt;Hulk&lt;/h4&gt;
+         |  &lt;img 
+         |    src="./hulk.png" 
+         |    class="thumbnail"
+         |  /&gt;
+         |&lt;/div&gt;
+      pre.bg-near-black.pa1.f8.no-text-shadow.mt1
+        code.language-js.prewrap
+          |$('.description h4').text()
+          |$('.description img').attr('src')
+      pre.bg-near-black.pa1.f8.no-text-shadow.mt1
+        code.language-js.prewrap
+          |{
+          |  "name": "Hulk",
+          |  "thumbnail": "./hulk.png"
+          |}

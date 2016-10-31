@@ -1,17 +1,12 @@
 @import './vendors/reveal';
+.reveal { @import './vendors/tachyons'; }
 
-@import '_variables';
-@import '_fonts';
+@import 'variables';
+@import 'fonts';
+@import 'base';
 
-@import '_base';
-@import '_layout';
-
-@import '_headings';
-@import '_code';
-
-@import '_navigation';
-@import '_grid';
-@import '_contact';
-
-@import '_utils';
-@import '_custom';
+.reveal {
+  @import 'utils';
+  @import 'code';
+  @import 'contact';
+}

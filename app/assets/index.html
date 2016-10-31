@@ -1,266 +1,29 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Marvel Super-Search</title>
-  <meta name="description" content="HumanTalks">
-  <meta name="author" content="Timothée Carry">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="main.css" />
-  <link rel="shortcut icon" href="./favicon.ico">
-  <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-  <a class="demo-link" target="_blank" href="https://pixelastic.github.io/marvel/">https://pixelastic.github.io/marvel/</a>
-  <div class="demo--video js-demo--video">
-    <iframe height="100%" width="100%" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="reveal">
-    <div class="slides">
-      <!--HOME-->
-      <section data-background="./img/background-intro.png">
-        <h1>Marvel Super-Search!</h1>
-      </section>
-
-      <!--WHO AM I-->
-      <section class="whoami">
-        <h3>Tim Carry</h3>
-        <div class="row">
-          <div class="column u-align-left u-align-middle">
-            <h4><a href="https://twitter.com/pixelastic/">@pixelastic</a></h4>
-          </div>
-          <div class="column u-align-center">
-            <a href="http://www.meetup.com/fr-FR/HumanTalks-Paris/">
-              <img src="./img/humantalks.png" alt="HumanTalks logo">
-            </a>
-            <p> </p>
-            <a href="https://www.algolia.com/">
-              <img src="./img/algolia.png" alt="Algolia logo"/>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!--DEMO-->
-      <section data-demo="true">
-      </section>
-
-      <!--DATA-->
-      <section data-background="img/background-data.jpg">
-        <h1>Getting the data</h1>
-      </section>
-
-      <!--WIKIPEDIA-->
-      <section>
-        <h3>Wikipedia</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>Too <strong>many</strong> sources</p>
-            <p>Hard to use:</p>
-            <ul>
-              <li><strong>Raw</strong> results</li>
-              <li>Custom <strong>markup</strong></li>
-              <li>Not <strong>structured</strong></li>
-              <li><strong>Unofficial</strong> projects</li>
-              <li><strong>Frozen</strong> in time</li>
-              <li><strong>Incomplete</strong></li>
-            </ul>
-            <p><code>wiki-infobox</code></p>
-            <p><code>wikidata-sdk</code></p>
-            <p><code>x-ray</code></p>
-          </div>
-          <div class="column u-align-center">
-            <a href="https://en.wikipedia.org/" class="marvel-wikipedia-api--logo">
-              <img src="img/wikipedia-logo.png" alt="Wikipedia Logo" />
-            </a>
-            <a href="http://wiki.dbpedia.org/" class="marvel-wikipedia-api--logo">
-              <img src="img/dbpedia.png" alt="DBPedia logo" />
-            </a>
-            <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" class="marvel-wikipedia-api--logo">
-              <img src="img/wikidata.png" alt="Wikidata logo" />
-            </a>
-            <strong>HTML scraping</strong>
-          </div>
-        </div>
-      </section>
-
-      <!--MARVEL API-->
-      <section>
-        <h3>Marvel API</h3>
-        <a href="http://gateway.marvel.com/v1/public/characters/1009262" class="code-url">http://gateway.marvel.com/v1/public/characters/<span class="code--value">1009262</span></a>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p><strong>2 years</strong> old</p>
-            <p>Unreliable:</p>
-            <ul>
-              <li>Timeouts</li>
-              <li>Infinite <strong>loops</strong></li>
-              <li><strong>Empty</strong> results</li>
-              <li>Slow</li>
-              <li>Rate limit</li>
-            </ul>
-            <p><code>retryUntilItWorks()</code></p>
-          </div>
-          <div class="column u-align-center">
-            <p><img src="./img/marvel-logo.png" height="60" alt="Marvel logo" /></p>
-            <p><img src="img/daredevil.jpg" alt="Daredevil thumbnail" /></p>
-            <blockquote>Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock […]</blockquote>
-            <p><strong>827</strong> comics, <strong>1326</strong> stories</p>
-          </div>
-        </div>
-      </section>
-
-      <!--MARVEL WEBSITE-->
-      <section data-background="img/daredevil-bg.gif">
-        <h3>Marvel Website</h3>
-        <a href="http://marvel.com/characters/11/daredevil" class="code-url">http://marvel.com/characters/<span class="code--value">11</span>/<span class="code--value">daredevil</span></a>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p><strong>Different</strong> than <strong>API</strong></p>
-            <p>Manual <strong>scraping</strong> again</p>
-            <p><strong>Awesome</strong> for design</p>
-          </div>
-          <div class="column u-align-center">
-            <p><span class="marvel-color" style="background:rgb(63, 6, 6)">#3F0606</span></p>
-          </div>
-        </div>
-      </section>
-
-      <!--ISOLATED SCRIPTS-->
-      <section>
-        <h3>Isolated scripts</h3>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>One script <strong>per source</strong></p>
-            <p> </p>
-            <p><strong>Scraping</strong></p>
-            <ul>
-              <li>Easy</li>
-              <li>Slow</li>
-              <li><strong>Temporary</strong> files</li>
-            </ul>
-            <p><strong>Parsing</strong></p>
-            <ul>
-              <li>Complex</li>
-              <li>Fast</li>
-              <li><strong>Commited</strong> in <code>git</code></li>
-            </ul>
-          </div>
-          <div class="column u-align-center u-align-middle">
-            <pre><code class="language-sh">$ npm run <span class="code--value">dbpedia</span></code></pre>
-
-            <pre><code class="language-shell"><span class="code--directory">./download/dbpedia</span>
-  ├── <span class="code--file">8-Ball_(comics).json</span>
-  ├── <span class="code--file">Abdul_Alhazred_(comics).json</span>
-  ├── <span class="code--file">Abigail_Brand.json</span>
-  […]
-  ├── <span class="code--file">Zombie_(comics).json</span>
-  ├── <span class="code--file">Zom.json</span>
-  └── <span class="code--file">Zzzax.json</span></code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--BUILDING THE UI-->
-      <section data-background="img/background-ui.jpg">
-        <h1>Building the UI</h1>
-        <div class="marvel-building-blocks--logos">
-          <a href="https://github.com/" class="marvel-building-blocks--logo">
-            <img src="img/github.png" alt="GitHub logo" />
-          </a>
-          <a href="https://www.algolia.com/" class="marvel-building-blocks--logo">
-            <img src="img/algolia.png" alt="Algolia logo" />
-          </a>
-          <a href="http://cloudinary.com/" class="marvel-building-blocks--logo">
-            <img src="img/cloudinary.png" alt="Cloudinary logo" />
-          </a>
-        </div>
-      </section>
-
-      <!--INSTANTSEARCH-->
-      <section>
-        <h3 class="marvel-instantsearch--title">
-          <a href="https://community.algolia.com/instantsearch.js/">
-            <img src="img/instantsearch.svg" class="marvel-instantsearch--logo" alt="InstantSearch logo" />
-          </a>
-        </h3>
-
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>library of UI <strong>widgets</strong></p>
-            <p><strong>fully</strong> customizable</p>
-            <p>eat your own <strong>dog food</strong></p>
-            <p>10k records <strong>free</strong></p>
-            <p><img src="img/facets.png" class="u-align-center-box" alt="Facet screenshot" /></p>
-          </div>
-          <div class="column u-align-center">
-            <pre><code class="language-html">&lt;h3>Teams&lt;/h3>
-&lt;div id="teams">&lt;/div></code></pre>
-
-            <pre><code class="language-js">[…].refinementList({
-  container: '#teams',
-  attributeName: 'teams',
-  operator: 'and',
-  limit: 10
-})</code></pre>
-
-            <pre><code class="language-css">.ais-refinement-list--label {
-  cursor: pointer;
-  font-weight: normal;
-}</code></pre>
-          </div>
-        </div>
-      </section>
-
-      <!--CLOUDINARY-->
-      <section>
-        <h3>Cloudinary</h3>
-        <a href="http://res.cloudinary.com/pixelastic-marvel/image/fetch/w_450,q_90,c_scale,f_auto,e_colorize:40,co_rgb:3F0606/http://i.annihil.us/u/prod/marvel/i/mg/b/03/537ba78541492.gif" class="code-url">http://res.cloudinary.com/<span class="code--key">pixelastic-marvel</span>/image/fetch/
-  <span class="code--key">w</span>_<span class="code--value">450</span>,<span class="code--key">q</span>_<span class="code--value">90</span>,<span class="code--key">e</span>_<span class="code--value">colorize</span>:<span class="code--value">40</span>,<span class="code--key">co</span>_<span class="code--value">rgb</span>:<span class="code--value">3F0606</span>/
-  <span class="code--value">http://i.marvel.com/i/03/537ba78541492.gif</span></a>
-        <div class="row">
-          <div class="column u-align-middle u-align-left">
-            <p>Image <strong>CDN</strong></p>
-            <p><strong>Resize</strong> and <strong>compress</strong></p>
-            <p><strong>Tons</strong> of effects</p>
-            <p>7.5k operations <strong>free</strong></p>
-          </div>
-          <div class="column u-align-center">
-            <p class="marvel-cloudinary--image" data-text="1920x840px, 92KB"><img src="img/deadpool-base.gif" alt="Deadpool comic panels" /></p>
-            <p class="marvel-cloudinary--image" data-text="450x197px, 26KB"><img src="img/deadpool-cloudinary.gif" alt="Tainted Deadpool comic panels" /></p>
-          </div>
-        </div>
-      </section>
-
-      <!--QUESTIONS-->
-      <section data-background="img/algolia-alien.png">
-        <div class="contact">
-          <div class="contact--part contact--part__mail"  data-name="email">
-            tim@
-            <div class="contact--part contact--part__website" data-name="website">
-              <div class="contact--part contact--part__twitter" data-name="twitter">
-                pixelastic
-              </div>
-            .com
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </div>
-
-  <script src="js/zepto.min.js"></script>
-  <script src="js/head.min.js"></script>
-  <script src="js/reveal.js"></script>
-  <script src="app.js"></script>
-  <script>require('app').default.init()</script>
-</body>
-
-</html>
+<!DOCTYPE html><html lang="en"><head><title>Marvel Super-Search</title><meta name="description" content="Le Wagon Nantes - 2016"><meta name="author" content="Tim Carry"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" type="text/css" href="./main.css"><link rel="shortcut icon" href="./favicon.ico"><!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><a class="fixed top-0 right-1 mt1 z-5 link white text-shadow hack f8" target="_blank" href="https://pixelastic.github.io/css-flags/">https://algolia.github.io/marvel/</a><div class="slides white crime text-shadow-1"><!-- Intro--><section data-background="./img/background-intro.png"><h1 class="ma0 palooka tc text-shadow-2 small-caps f1">Marvel Super-Search</h1></section><section><h3 class="f2 mb3 palooka">Tim Carry</h3><div class="flex flex-row flex-wrap"><div class="flex flex-auto w-50 f4 h3 justify-center items-center">@pixelastic</div><div class="flex flex-auto w-50 h3 items-center justify-center"><img class="h2" src="./img/algolia.png" alt="Algolia"></div><div class="flex flex-auto w-50 h3 items-center justify-center"><img class="h2" src="./img/humantalks.png" alt="HumanTalks"></div><div class="flex flex-auto w-50 h3 items-center justify-center"><img class="h1" src="./img/techlunch.png" alt="TechLunch"></div></div></section><!-- Demo--><section data-demo="true"><h3 class="f2 mb3 palooka">Here be demo</h3></section><section><div class="flex-row-nowrap tc lh-copy small-caps f4"><div class="flex-auto"> <div class="db bg-white transparent no-text-shadow br-100 h1 w1 center hack f6 shadow-3">1</div><div class="mt2"> <div class="green">Getting <div class="di gold">data</div></div>from an <div class="di gold">API</div></div></div><div class="flex-auto"> <div class="db bg-white transparent no-text-shadow br-100 h1 w1 center hack f6 shadow-3">2</div><div class="mt2"> <div class="purple">Using <div class="di gold">data</div></div>with an <div class="di gold">API</div></div></div></div></section><section><div class="f2 palooka tl lh-copy small-caps w-33 center"><div>Application</div><div>Programming</div><div class="dib gold">Interface</div></div></section><!-- Getting the data--><section><h3 class="f3 mb3 palooka"><div class="di green">Getting </div>the data</h3><div class="flex-row-nowrap items-center lh-copy small-caps f4 h4"><div class="flex-auto w-50 flex justify-center"><a href="https://en.wikipedia.org/"><img class="db" src="./img/wikipedia-logo.png" alt="Wikipedia"></a></div><div class="flex-auto w-50 flex justify-center"><a href="https://www.marvel.com/"><img class="db" src="./img/marvel-logo.png" alt="Marvel"></a></div></div></section><section><h3 class="f3 mb1 palooka"> Wikipedia <div class="di gold">API </div></h3><div class="bg-near-black hack no-text-shadow pl1 f7 mb1"> http://dbpedia.org/data/<div class="di gold">Hulk_(comics)</div>.json</div><div class="flex-row-nowrap items-center"><div class="flex-auto w-66 flex justify-center"><img src="./img/infobox.png"></div><div class="flex-auto w-33"><pre class="bg-near-black pa1 f8 no-text-shadow hack prewrap"><code class="language-js">{
+ "abstract": [
+  {
+    "lang": "en",
+    "value": "Hulk is a fictional character, a superhero […]"
+  }
+ ],
+ "aliases": [
+  {
+    "lang": "en",
+    "value": "Robert Bruce Banner, Joe Fixit, War, World-Breaker, Doc Green"
+  }
+ ]
+}</code></pre></div></div></section><section><h3 class="f3 mb1 palooka"> Marvel <div class="di gold">API </div></h3><div class="bg-near-black hack no-text-shadow pl1 f7 mb1"> http://gateway.marvel.com/v1/public/characters/<div class="di gold">1009351</div></div><div class="flex-row-nowrap"><div class="flex-auto w-50 tc"><img src="./img/hulk.png"></div><div class="flex-auto w-50 ml2"><img class="dib mt1" src="./img/hulk-thumbnail.jpg"><pre class="bg-near-black pa1 f8 no-text-shadow"><code class="language-js prewrap">{
+ "name": "Hulk",
+ "thumbnail": "www.marvel.com/538615ca33ab0.jpg",
+ "description": 
+   "Caught in a gamma bomb explosion while trying to save the life of a teenager, [...]",
+}</code></pre></div></div></section><section><h3 class="f3 mb3 palooka"> Incomplete <div class="di gold">API </div></h3><div class="flex-row-nowrap h4"><div class="flex-auto w-50"><div class="f4 palooka">Scraping</div><div class="f7 lh-copy">Extract content from HTML using CSS selectors</div><div class="mt2 f7 no-text-shadow"><div class="dib bg-near-black hack ph1 mr1 orange">nokogiri</div><div class="dib bg-near-black hack ph1 mr1 blue">scrapy</div><div class="dib bg-near-black hack ph1 mr1 green">x-ray</div></div></div><div class="flex-auto w-50 ml2"><pre class="bg-near-black pa1 f8 no-text-shadow"><code class="language-html prewrap">&lt;div class="description"&gt;
+ &lt;h4&gt;Hulk&lt;/h4&gt;
+ &lt;img 
+   src="./hulk.png" 
+   class="thumbnail"
+ /&gt;
+&lt;/div&gt;</code></pre><pre class="bg-near-black pa1 f8 no-text-shadow mt1"><code class="language-js prewrap">$('.description h4').text()
+$('.description img').attr('src')</code></pre><pre class="bg-near-black pa1 f8 no-text-shadow mt1"><code class="language-js prewrap">{
+ "name": "Hulk",
+ "thumbnail": "./hulk.png"
+}</code></pre></div></div></section><!-- SaaS--><section><h3 class="f3 mb2 palooka small-caps">SaaS = <div class="di gold">S</div>oftware <div class="di gold">a</div>s <div class="di gold">a </div><div class="di gold">S</div>ervice</h3><div class="flex-row-nowrap h4 debg items-center"><div class="flex-auto w-50"><div class="palooka f6 mt2">APIs can be used to <div class="crime b green tc mb2">read <div class="di gold">data</div></div>but also to<div class="crime b purple tc">transform <div class="di gold">data</div></div></div></div><div class="flex-auto w-50 ml2 flex-column-nowrap items-center"><img class="mb2 h2" src="./img/algolia.png"><img class="h3" src="./img/cloudinary.png"></div></div></section><section><h3 class="mb2"><img class="h1" src="./img/algolia.png"></h3><div class="flex-row-nowrap h4"><div class="flex-auto w-66"><div class="palooka f4">Instant Search API</div><div class="f6 mt2">Search instantly in<div class="gold b">your data</div></div><ul class="list mt2 f6"><li>1. Push your data</li><li>2. Configure</li><li>3. Search</li></ul></div><div class="flex-auto w-33"><img src="./img/algolia-autocomplete.gif"><!-- img.h2(src="./img/algolia-steps.png")--></div></div><!-- Search as a service--><!-- envoie donnée, permet de rechercher dedans très vite--></section><section><h3 class="f3 mb3 palooka">Cloudinary</h3><!-- Image modifications--><!-- Resize, compress, tint--><!-- On demand--></section><!-- Free--><section><h3 class="f3 mb3 palooka">Hosting</h3><!-- GitHub pages (HTML/JS/CSS)--><!-- Data, Algolia--><!-- Images Cloudinary--></section><section><h3 class="f3 mb3 palooka">Free plans</h3><!-- GitHub gratuit si public--><!-- Algolia <10k records--><!-- Cloudinary 7.5k images/mois--></section><!-- Conclusion--><section><h3 class="f3 mb3 palooka">Conclusion</h3><!-- Seek API--><!-- Solve issues easily--><!-- Free at first, pay only when need it--></section><!-- Displaying the data--><!-- Pas que lecture, aussi action: SaaS--><!-- Using Algolia. API de recherche. Fournit API à utilisateurs--><!-- Utilisateur mets la data dedans, et peut ensuite cherher facilement--><!-- (Instantsearch JS, JavasScript/HTML/CSS pour construire cela)--><!-- Utilise aussi API pour les images, resize, compress, change couleur--><!----><!-- Plans gratuits Algolia et Cloudinary--><!-- Hebergement gratuit sur GitHub--><!----><!-- Conclusion--><!-- Recherchez les API, les solutions en SaaS, ont réglés des soucis pour--><!-- vous.--><!-- Souvent gratuit pour petits volumes, puis payant--><section data-background="./img/questions.jpg"><h3 class="palooka f2">Questions?</h3><div class="relative"><div class="palooa f3 h4 flex-column-wrap justify-center items-center"><div class="di c-contact c-contact--email" data-name="email">tim@<div class="di c-contact c-contact--website" data-name="website"><div class="di c-contact c-contact--company" data-name="company">algolia</div>.com</div></div></div><div class="h2 absolute bottom--1 right--2">@pixelastic</div></div></section></div></div></body><script src="./js/head.min.js"></script><script src="./js/reveal.js"></script><script src="./app.js"></script><script>require('javascripts/app').default.init()</script></html>

@@ -1,0 +1,78 @@
+include ./partials/config.pug
+include ./partials/mixins.pug
+doctype html
+html(lang="en")
+  head
+    title=talk_title
+    meta(name="description" content=talk_description)
+    meta(name="author" content=talk_author)
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel='stylesheet', type='text/css', href='./main.css')
+    link(rel='shortcut icon', href='./favicon.ico')
+    <!--[if lt IE 9]>
+      script(src='./js/html5shiv.js')
+    <![endif]-->
+  body
+    .reveal
+      a.fixed.top-0.right-1.mt1.z-5.link.white.text-shadow.hack.f8(target="_blank", href="https://pixelastic.github.io/css-flags/")
+        |https://algolia.github.io/marvel/
+
+      .slides.white.crime.text-shadow-1
+
+        // Intro
+        include ./slides/home.pug
+        include ./slides/who-am-i.pug
+
+        // Demo
+        include ./slides/demo.pug
+        include ./slides/toc.pug
+        include ./slides/api.pug
+
+        // Getting the data
+        include ./slides/source-websites.pug
+        include ./slides/api-wikipedia.pug
+        include ./slides/api-marvel.pug
+        include ./slides/scraping.pug
+
+        // SaaS
+        include ./slides/saas.pug
+        include ./slides/algolia.pug
+        include ./slides/cloudinary.pug
+
+        // Free
+        include ./slides/hosting.pug
+        include ./slides/freeplans.pug
+
+        // Conclusion
+        include ./slides/conclusion.pug
+
+
+        // Displaying the data
+        // Pas que lecture, aussi action: SaaS
+        // Using Algolia. API de recherche. Fournit API à utilisateurs
+        // Utilisateur mets la data dedans, et peut ensuite cherher facilement
+        // (Instantsearch JS, JavasScript/HTML/CSS pour construire cela)
+        // Utilise aussi API pour les images, resize, compress, change couleur
+        //
+        // Plans gratuits Algolia et Cloudinary
+        // Hebergement gratuit sur GitHub
+        //
+        // Conclusion
+        // Recherchez les API, les solutions en SaaS, ont réglés des soucis pour
+        // vous.
+        // Souvent gratuit pour petits volumes, puis payant
+
+
+
+
+
+
+        include ./slides/questions.pug
+
+  script(src='./js/head.min.js')
+  script(src='./js/reveal.js')
+  script(src='./app.js')
+  script require('javascripts/app').default.init()
+

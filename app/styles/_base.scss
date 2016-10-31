@@ -1,51 +1,25 @@
-* {
+*, :after, :before {
   box-sizing: border-box;
 }
-
+// Change base font-size so all tachyon scale adapt
+html {
+  font-size: 48px;
+}
 body {
-  background-color: $red;
+  background-color: $background; // Change it in _variables.scss
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+// Default reveal values override
 .reveal {
-  font-family: 'Text', Helvetica, Arial, sans-serif;
-  color: $white;
-  font-size: 1.6rem;
-  line-height: 1.5rem;
-
-  strong {
-    font-family: 'TextBold';
+  .slides {
+    text-align: left;
   }
-
-  // Links
-  a {
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: $green;
+  pre {
+    width: initial;
+    margin: 0;
+    code {
+      padding: 0;
     }
   }
-
-  // Paragraphs
-  p {
-    line-height: 2rem;
-  }
-
-  // Lists
-  ul, ol {
-    line-height: 2rem;
-    margin-left: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  // Blockquote
-  blockquote {
-    text-align: left;
-    width: 90%;
-    padding: .5rem;
-    opacity: .7;
-    font-size: 1.2rem;
-    background: #121212;
-  }
-
 }
-
