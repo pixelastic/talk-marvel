@@ -12,10 +12,15 @@
 .flex-row-nowrap { display: flex; flex-direction: row; }
 .flex-column-wrap { display: flex; flex-direction: column; flex-wrap: wrap}
 .flex-column-nowrap { display: flex; flex-direction: column; }
+.flex-vcenter { align-items: center }
+.flex-hcenter { justify-content: center }
+.flex-center { align-items: center; justify-content: center; }
 // List
 .list-inside { list-style-position: inside }
 // Whitespace
 .prewrap { white-space: pre-wrap; }
+// Line-height
+.lh-0 { line-height: 0; }
 // Overflow
 .oh { overflow: hidden; }
 // Font-size

@@ -17,7 +17,7 @@ html(lang="en")
   body
     .reveal
       a.fixed.top-0.right-1.mt1.z-5.link.white.text-shadow.hack.f8(target="_blank", href="https://pixelastic.github.io/css-flags/")
-        |https://algolia.github.io/marvel/
+        |// TODO: https://algolia.github.io/marvel/
 
       .slides.white.crime.text-shadow-1
 
@@ -31,44 +31,21 @@ html(lang="en")
         include ./slides/api.pug
 
         // Getting the data
+        include ./slides/getting-data.pug
         include ./slides/source-websites.pug
         include ./slides/api-wikipedia.pug
         include ./slides/api-marvel.pug
         include ./slides/scraping.pug
 
         // SaaS
+        include ./slides/transforming-data.pug
         include ./slides/saas.pug
         include ./slides/algolia.pug
         include ./slides/cloudinary.pug
-
-        // Free
-        include ./slides/hosting.pug
-        include ./slides/freeplans.pug
+        include ./slides/serverless.pug
 
         // Conclusion
         include ./slides/conclusion.pug
-
-
-        // Displaying the data
-        // Pas que lecture, aussi action: SaaS
-        // Using Algolia. API de recherche. Fournit API à utilisateurs
-        // Utilisateur mets la data dedans, et peut ensuite cherher facilement
-        // (Instantsearch JS, JavasScript/HTML/CSS pour construire cela)
-        // Utilise aussi API pour les images, resize, compress, change couleur
-        //
-        // Plans gratuits Algolia et Cloudinary
-        // Hebergement gratuit sur GitHub
-        //
-        // Conclusion
-        // Recherchez les API, les solutions en SaaS, ont réglés des soucis pour
-        // vous.
-        // Souvent gratuit pour petits volumes, puis payant
-
-
-
-
-
-
         include ./slides/questions.pug
 
   script(src='./js/head.min.js')
