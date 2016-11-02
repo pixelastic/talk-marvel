@@ -24,6 +24,23 @@ let Talk = {
         }
       }]
     });
+
+    Reveal.addEventListener('slidechanged', function (event) {
+      let shouldShowDemo = $(event.currentSlide).eq(0).data('demo');
+      let revealRoot = $('.js-root');
+      let jsDemo = $('.js-demo');
+
+      // Hide the demo
+      if (!shouldShowDemo) {
+        revealRoot.removeClass('js-demo-enabled');
+        return;
+      }
+
+      // Change the src of the demo, appending a random string to force it to
+      // redraw
+      jsDemo.attr('src', jsDemo.data('src') + `?x=${Math.random()}`);
+      revealRoot.addClass('js-demo-enabled');
+    });
   }
 };
 
