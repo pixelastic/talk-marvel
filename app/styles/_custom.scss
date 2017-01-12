@@ -2,3 +2,8 @@
   .js-demo { display: block; }
   .js-link { display: none; }
 }
+img.brighten {
+  $brightnessFactor: 2.5;
+  filter: brightness($brightnessFactor);
+  -webkit-filter: brightness($brightnessFactor);
+}
