@@ -1,7 +1,9 @@
-public
+.DS_Store
+.sass-cache
 Thumbs.db
+bower_components
 node_modules
-nohup.out
 npm-debug.log
 tmp
 *~
+public/
