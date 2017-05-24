@@ -32,14 +32,13 @@
     border-top: none;
   }
 }
-.c-contact--twitter {
+.c-contact--company {
   &:after {
     top: -1.9em;
-    left: -2em;
   }
   &:before {
     bottom:1.2em;
-    left:-.8em;
+    left:.2em;
     border-bottom: none;
   }
 }
